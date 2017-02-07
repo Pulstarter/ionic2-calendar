@@ -1,0 +1,34 @@
+<ion-grid>
+
+  <ion-row>
+
+    <ion-col text-right>
+      <button ion-button clear large
+              (click)="onClickBackwards()">
+        <ion-icon name="ios-arrow-dropleft-circle"></ion-icon>
+      </button>
+    </ion-col>
+
+    <ion-col>
+      <h1 text-center>{{ year }}</h1>
+      <h3 text-center>{{ cal_months_labels[month] }}</h3>
+    </ion-col>
+
+    <ion-col text-left>
+      <button ion-button clear large
+              (click)="onClickForward()">
+        <ion-icon name="ios-arrow-dropright-circle"></ion-icon>
+      </button>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row>
+    <ion-col *ngFor="let day of cal_days_labels" text-center>{{ day }}</ion-col>
+  </ion-row>
+
+  <ion-row *ngFor="let week of weeks">
+    <ion-col *ngFor="let cell of week" text-center>{{ cell }}</ion-col>
+  </ion-row>
+
+</ion-grid>
